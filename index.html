@@ -1,0 +1,216 @@
+<html>
+<head>
+	<title>jAnimate - make your animate.css rocks with jQuery</title>
+	<link rel="stylesheet" type="text/css" href="http://daneden.github.io/animate.css/animate.min.css" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+	<style type="text/css">
+
+	@-webkit-keyframes hue {
+	  from { -webkit-filter: hue-rotate(0deg); }
+	  to { -webkit-filter: hue-rotate(-360deg); }
+	}
+
+	body {
+		font-family: "Raleway";
+	}
+
+	#jAnimate, .rocks {
+		margin: 0 auto;
+		width: 100%;
+		text-align: center;
+	}
+
+	#jAnimate {
+		margin-top: 35px;
+		font-size: 100px;
+		font-weight: 100 !important;
+		width: 100%;
+		text-align: center; 
+	}
+
+	.rocks {
+		font-size: 18px;
+		margin-top: -20px;
+		margin-bottom: 45px;
+		color: #999;
+	}
+
+	#jAnimate .in, .box .execute {
+		background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	    -webkit-animation: hue 20s infinite linear;
+	}
+
+	#jAnimate .in {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.wrap {
+		margin: 0 auto;
+		padding: 10px;
+		margin: 10px auto;
+		width: 50%;
+		min-width: 400px;
+	}
+
+	.box {
+		border: 1px solid #EEEEEE;
+		color: #333;
+		font-size: 14px;
+		position: relative;
+		border-radius: 5px;
+	}
+
+	.box pre {
+		font-family: monospace;
+		margin-bottom: 0;
+		margin-top: 5px;
+	}
+
+	.box pre code {
+		background: white !important;
+	}
+
+	.box .execute {
+		position: absolute;
+		top: -5px;
+		right: 2px;
+		border: 0px solid #f35626;
+		border-radius: 2px;
+		color: white;
+		font-weight: 500;
+		cursor: pointer;
+		outline: none;
+		opacity: 0.9;
+	}
+
+	.box .execute:hover {
+		opacity: 1;
+	}
+
+	.box .execute:active {
+		top: -4px;
+	}
+
+	footer {
+		color: #BBB;
+		font-size: 12px;
+	}
+
+	footer hr {
+		border: none;
+		border-top: 1px solid #EEE;
+		margin-bottom: 10px;
+	}
+
+	footer a {
+		color: #888;
+		text-decoration: none;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.b2 { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
+
+	.b3 { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
+
+	.b4 { -webkit-animation-delay: 0.6s; animation-delay: 0.6s; }
+
+	.b5 { -webkit-animation-delay: 0.8s; animation-delay: 0.8s; }
+
+	footer { -webkit-animation-delay: 1s; animation-delay: 1s; }
+
+	</style>
+</head>
+<body>
+	<header class="animated fadeInDown">
+		<div id="jAnimate"><span class="in">jAnimate</span></div>
+		<div class="rocks">make your animate.css rocks with jQuery</div>
+	</header>
+
+	<div class="wrap box b1 animated fadeInUp">
+		<pre><code class="javascript">$('#jAnimate').animate('rubberBand infinite');</code></pre>
+		<button class="execute" data-exec="1">Execute</button>
+	</div>
+
+	<div class="wrap box b2 animated fadeInUp">
+		<pre><code class="javascript">$('#jAnimate').animateEnd('rubberBand');</code></pre>
+		<button class="execute" data-exec="2">Execute</button>
+	</div>
+
+	<div class="wrap box b3 animated fadeInUp">
+		<pre><code class="javascript">$('#jAnimate').animateAndEnd('flipOutY');</code></pre>
+		<button class="execute" data-exec="3">Execute</button>
+	</div>
+
+	<div class="wrap box b4 animated fadeInUp">
+		<pre><code class="javascript">$('#jAnimate').animateAndCall('tada', function(self, effect){
+	$(self).animateEnd(effect);
+	alert('Animation was finished');
+});</code></pre>
+		<button class="execute" data-exec="4">Execute</button>
+	</div>
+
+	<div class="wrap box b5 animated fadeInUp">
+		<pre><code class="javascript">$('#jAnimate').animateAndCall('tada', function(self, effect){
+	$(self).animateEnd(effect).animateAndEnd('pulse');
+});</code></pre>
+		<button class="execute" data-exec="5">Execute</button>
+	</div>
+
+	<footer class="animated fadeInUp">
+		<div class="wrap center">
+			<hr />
+			<span>
+				By Renato Ribeiro - 
+				View on <a href="http://github.com/renatorib/janimate" target="_blank">Github</a> 
+				-
+				See <a href="daneden.github.io/animate.css/" target="_blank">Animate.css</a>
+			</span> 
+		</div>
+
+	</footer>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/janimate-0.1/janimate-0.1.jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('pre code').each(function(i, block) {
+			    hljs.highlightBlock(block);
+			});
+
+			$('[data-exec=1]').click(function(){
+				$('#jAnimate').animate('rubberBand infinite');
+			});
+
+			$('[data-exec=2]').click(function(){
+				$('#jAnimate').animateEnd('rubberBand');
+			});
+
+			$('[data-exec=3]').click(function(){
+				$('#jAnimate').animateAndEnd('flipOutY');
+			});
+
+			$('[data-exec=4]').click(function(){
+				$('#jAnimate').animateAndCall('tada', function(self, effect){
+					$(self).animateEnd(effect);
+					alert('Animation was finished');
+				});
+			});
+
+			$('[data-exec=5]').click(function(){
+				$('#jAnimate').animateAndCall('tada', function(self, effect){
+					$(self).animateEnd(effect).animateAndEnd('pulse');
+				});
+			});
+
+		});
+	</script>
+
+</body>
+</html>
