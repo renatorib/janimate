@@ -43,11 +43,11 @@
 
 
 	#jAnimate .in, .box .execute {
-		background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
 	    -webkit-animation: hue 20s infinite linear;
 	}
 
 	#jAnimate .in {
+		background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -81,15 +81,16 @@
 
 	.box .execute {
 		position: absolute;
-		top: -5px;
-		right: 2px;
-		border: 0px solid #f35626;
+		top: 5px;
+		right: 5px;
+		border: 2px solid #f35626;
 		border-radius: 2px;
 		color: white;
 		font-weight: 500;
 		cursor: pointer;
 		outline: none;
 		opacity: 0.9;
+		background-color: transparent;
 	}
 
 	.box .execute:hover {
@@ -97,7 +98,7 @@
 	}
 
 	.box .execute:active {
-		top: -4px;
+		top: 7px;
 	}
 
 	footer {
