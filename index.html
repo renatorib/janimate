@@ -18,46 +18,98 @@
 	body {
 		font-family: "Raleway";
 		background-color: #ecf0f1;
+		padding: 0;
+		margin: 0;
+		padding-top: 160px;
 	}
 
-	#jAnimate, .rocks {
+	header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10;
+		background-color: #ecf0f1;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 130px;
+	}
+
+	header:after {
+		content: '';
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 70px;
+		left: 0;
+		top: 22px;
+		pointer-events: none;
+		background: -moz-linear-gradient(top,  rgba(236,240,241,1) 0%, rgba(236,240,241,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,240,241,1)), color-stop(100%,rgba(236,240,241,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(236,240,241,1) 0%,rgba(236,240,241,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(236,240,241,1) 0%,rgba(236,240,241,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(236,240,241,1) 0%,rgba(236,240,241,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(236,240,241,1) 0%,rgba(236,240,241,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf0f1', endColorstr='#00ecf0f1',GradientType=0 ); /* IE6-9 */
+	}
+
+	#title, .rocks {
 		margin: 0 auto;
 		width: 100%;
 		text-align: center;
 	}
 
-	#jAnimate {
-		margin-top: 35px;
+	#title {
 		font-size: 100px;
 		font-weight: 100 !important;
 		width: 100%;
 		text-align: center; 
+		pointer-events: none;
 	}
 
 	.rocks {
 		font-size: 18px;
 		margin-top: -20px;
-		margin-bottom: 45px;
 		color: #999;
 	}
 
 
-	#jAnimate .in, .box .execute {
+	#title .in, .box .execute, .method h3 {
 	    -webkit-animation: hue 20s infinite linear;
+	    animation: hue 20s infinite linear;
 	}
 
-	#jAnimate .in {
-		background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	#title .in, .method h3 {
+		background-image: -webkit-linear-gradient(180deg, #f35626, #feab3a);
+		background-image: linear-gradient(180deg, #f35626, #feab3a);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
 	}
 
 	.wrap {
 		margin: 0 auto;
 		padding: 10px;
 		margin: 10px auto;
-		width: 50%;
+		width: 60%;
 		min-width: 280px;
+	}
+
+	.method {
+		padding: 5px;
+		padding-left: 10px;
+		border-left: 3px solid #DDD;
+		margin-bottom: 15px;
+	}
+
+	.method h3 {
+		margin: 0;
+	}
+
+	.method p {
+		margin: 0;
+		margin-top: 2px;
+		color: #666;
 	}
 
 	.box {
@@ -67,16 +119,23 @@
 		position: relative;
 		border-radius: 5px;
 		background: #fff;
+		padding: 5px;
+		padding-right: 77px;
+		margin-bottom: 5px;
 	}
 
 	.box pre {
 		font-family: monospace;
-		margin-bottom: 0;
-		margin-top: 5px;
+		margin: 0;
+		background: #eee;
+		border-radius: 5px;
 	}
 
 	.box pre code {
 		background: white !important;
+		border: 1px solid #eee;
+		border-radius: 5px;
+		padding: 10px;
 	}
 
 	.box .execute {
@@ -155,91 +214,99 @@
 <body>
 	<header>
 		<div class="out animated zoomInDown">
-			<div id="jAnimate">
+			<div id="title">
 				<span class="in">jAnimate</span>
 			</div>
 		</div>
 		<div class="rocks animated zoomInDown">makes your animate.css rocks with jQuery</div>
 	</header>
 
-	<div class="wrap box b1 animated zoomInDown">
-		<pre><code class="javascript">$('#jAnimate').animate('rubberBand infinite');</code></pre>
-		<button class="execute" data-exec="1">Execute</button>
-	</div>
 
-	<div class="wrap box b2 animated zoomInDown">
-		<pre><code class="javascript">$('#jAnimate').animateEnd('rubberBand');</code></pre>
-		<button class="execute" data-exec="2">Execute</button>
-	</div>
+	<div class="wrap">
+		<h2>Methods</h2>
 
-	<div class="wrap box b3 animated zoomInDown">
-		<pre><code class="javascript">$('#jAnimate').animateAndEnd('flipOutY');</code></pre>
-		<button class="execute" data-exec="3">Execute</button>
-	</div>
+		<div class="method">
+			<h3>$(selector).jAnimate(effect, callback);</h3>
+			<p>Animate elements with <code>effect</code> and call <code>callback</code> when finish.</p>
+		</div>
 
-	<div class="wrap box b4 animated zoomInDown">
-		<pre><code class="javascript">$('#jAnimate').animateAndCall('tada', function(self, effect){
-	$(self).animateEnd(effect);
-	alert('Animation was finished');
+		<div class="method">
+			<h3>$(selector).jAnimateOnce(effect, callback);</h3>
+			<p>Animate elements with <code>effect</code> and remove classes when finish, also call <code>callback</code>.</p>
+		</div>
+
+		<div class="method">
+			<h3>$(selector).jAnimateSequence(arrayOfEffects, callback);</h3>
+			<p>Execute a sequence of animations passed in <code>arrayOfEffects</code> and call <code>callback</code> when finish all.</p>
+		</div>
+
+		<h2>Examples</h2>
+
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimate('flipOutX');</code></pre>
+			<button class="execute">Execute</button>
+		</div>
+
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimateOnce('flipOutX');</code></pre>
+			<button class="execute">Execute</button>
+		</div>
+
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimateSequence(['bounce', 'tada', 'wobble']);</code></pre>
+			<button class="execute">Execute</button>
+		</div>
+
+		<h2>Callbacks Examples</h2>
+
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimate('rotateOut', function(){
+  alert('animation was finished');
 });</code></pre>
-		<button class="execute" data-exec="4">Execute</button>
-	</div>
+			<button class="execute">Execute</button>
+		</div>
 
-	<div class="wrap box b5 animated zoomInDown">
-		<pre><code class="javascript">$('#jAnimate').animateAndCall('tada', function(self, effect){
-	$(self).animateEnd(effect).animateAndEnd('pulse');
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimateOnce('fadeOutDown', function(self, effect){ 
+  alert(effect + ' was finished');
 });</code></pre>
-		<button class="execute" data-exec="5">Execute</button>
+			<button class="execute">Execute</button>
+		</div>
+
+		<div class="box">
+			<pre><code class="javascript">$('#title').jAnimateSequence(['bounce', 'tada', 'wobble'], function(){
+  alert('sequence was finished')
+});</code></pre>
+			<button class="execute">Execute</button>
+		</div>
+
+
 	</div>
 
-	<footer class="animated zoomInDown">
+	<footer class="">
 		<div class="wrap center">
 			<hr />
 			<span>
-				By Renato Ribeiro -  
+				By <a href="http://rena.to" target="_blank">Renato Ribeiro</a> -  
 				View on <a href="http://github.com/renatorib/janimate" target="_blank">Github</a> 
 				-
-				See <a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a><br />
+				See <a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a><br /><br />
 				Download <a href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" target="_blank">Animate.css</a> -
-				Download <a href="https://raw.githubusercontent.com/renatorib/janimate/master/js/janimate-0.1/janimate-0.1.jquery.min.js" target="_blank">jAnimate.min.js</a>
+				Download <a href="https://raw.githubusercontent.com/renatorib/janimate/master/dist/1.0/janimate-1.0.jquery.js" target="_blank">jAnimate.js</a>
 			</span> 
 		</div>
 
 	</footer>
 
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="js/janimate-0.1/janimate-0.1.jquery.min.js"></script>
+	<script src="js/janimate-1.0/janimate-1.0.jquery.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
 	<script type="text/javascript">
+		hljs.initHighlightingOnLoad();
 		$(document).ready(function(){
 
-			$('pre code').each(function(i, block) {
-			    hljs.highlightBlock(block);
-			});
-
-			$('[data-exec=1]').click(function(){
-				$('#jAnimate').animate('rubberBand infinite');
-			});
-
-			$('[data-exec=2]').click(function(){
-				$('#jAnimate').animateEnd('rubberBand');
-			});
-
-			$('[data-exec=3]').click(function(){
-				$('#jAnimate').animateAndEnd('flipOutY');
-			});
-
-			$('[data-exec=4]').click(function(){
-				$('#jAnimate').animateAndCall('tada', function(self, effect){
-					$(self).animateEnd(effect);
-					alert('Animation was finished');
-				});
-			});
-
-			$('[data-exec=5]').click(function(){
-				$('#jAnimate').animateAndCall('tada', function(self, effect){
-					$(self).animateEnd(effect).animateAndEnd('pulse');
-				});
+			$('.execute').click(function(){
+				eval($(this).parent().find('code').text());
 			});
 
 		});
