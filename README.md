@@ -11,7 +11,7 @@ NOTE: You need have jQuery and Animate.css in your project to use janimate.
 **Do not know Animate.css?**  
 If you're new to the wonderful world of Animate.css, I highly recommend you [visit this link](http://daneden.github.io/animate.css/), to see what you can do with Animate.css.
 
-You can use janimate with `bower`, `npm` or [download by rawgit file](https://rawgit.com/renatorib/janimate/master/dist/janimate.min.js)
+You can use janimate with `bower`, `npm` or [download by rawgit file](https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js)
 
 ### bower
 `bower install jquery-janimate`  
@@ -29,8 +29,9 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://ra
 <script src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js"></script>
 ```
 
-## Difference between `jAnimate` and `jAnimateOnce`
+## Difference between jAnimate and jAnimateOnce
 `jAnimateOnce()` clean the animation classes when the animation ends, which means that any effect that you do, it will return to normal. Suitable for the purposes of **Attention Seekers**. Not suitable for when you want the final animation stand, as effects of **Exits** and **Entrances**. In these cases, you should use the `jAnimate()`.
+
 
 ## Basic example
 ```html
