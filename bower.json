@@ -1,0 +1,24 @@
+{
+  "name": "janimate",
+  "version": "0.1.1",
+  "homepage": "https://github.com/renatorib/janimate",
+  "authors": [
+    "Renato Ribeiro <renatoribroman@gmail.com>"
+  ],
+  "description": "Plugin to help you use Animate.css with jQuery.",
+  "main": "src/janimate.min.js",
+  "keywords": [
+    "jQuery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    ".DS_Store",
+    "**/.DS_Store"
+  ]
+}
