@@ -67,11 +67,14 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://cd
         });
 
         $('.e4').click(function(){
-          $('h1').jAnimate('fadeIn', function(){});
+          $('h1').jAnimate('fadeIn', function(self, effect){
+            alert(effect + ' finish');
+          });
         });
 
       });
   </script>
+  
 </body>
 ```
 
