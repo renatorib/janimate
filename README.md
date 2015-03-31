@@ -1,15 +1,13 @@
 jAnimate
 ========
-Plugin to help you use Animate.css with jQuery.
-
-## Docs & Interactive Demo
-http://renatorib.github.io/janimate/
-
-## Download & Install
-NOTE: You need have jQuery and Animate.css in your project to use janimate.
+Plugin to help you use [Animate.css](http://daneden.github.io/animate.css/) with jQuery.  
+**Demo:** http://renatorib.github.io/janimate/
 
 **Do not know Animate.css?**  
 If you're new to the wonderful world of Animate.css, I highly recommend you [visit this link](http://daneden.github.io/animate.css/), to see what you can do with Animate.css.
+
+## Download & Usage
+NOTE: You need have **jQuery** and **Animate.css** in your project to use janimate.
 
 You can use janimate with `bower`, `npm` or [download by rawgit file](https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js)
 
@@ -25,6 +23,7 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://cd
 ```
 
 ### rawgit cdn
+`https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js`
 ```html
 <script src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js"></script>
 ```
