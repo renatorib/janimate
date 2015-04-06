@@ -1,6 +1,6 @@
 {
   "name": "janimate",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Plugin to help you use Animate.css with jQuery.",
   "main": "Gruntfile.js",
   "scripts": {
