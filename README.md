@@ -2,7 +2,7 @@ jAnimate
 ========
 Plugin to help you use [Animate.css](http://daneden.github.io/animate.css/) with jQuery.  
 
-**Demo:** http://renatorib.github.io/janimate/
+**Interactive Demo/Examples:** http://renatorib.github.io/janimate/
 
 ## Animate.css
 Do not know Animate.css? If you're new to the wonderful world of Animate.css, I highly recommend you [visit this link](http://daneden.github.io/animate.css/), to see what you can do with Animate.css.
@@ -12,17 +12,17 @@ NOTE: You need have **jQuery** and **Animate.css** in your project to use janima
 
 You can use janimate with `bower`, `npm` or [download by rawgit file](https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js)
 
-### bower
+### via bower
 `bower install jquery-janimate`  
 ```html
 <script src="bower_components/jquery-janimate/dist/janimate.min.js"></script>
 ```
-### npm
+### via npm
 `npm install janimate`  
 ```html
 <script src="node_modules/janimate/dist/janimate.min.js"></script>
 ```
-### rawgit cdn
+### via rawgit cdn
 `https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js`
 ```html
 <script src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js"></script>
@@ -76,3 +76,78 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://cd
 </body>
 ```
 
+## Effects
+
+* bounce
+* flash
+* pulse
+* rubberBand
+* shake
+* swing
+* tada
+* wobble
+* bounceIn
+* bounceInDown
+* bounceInLeft
+* bounceInRight
+* bounceInUp
+* bounceOut
+* bounceOutDown
+* bounceOutLeft
+* bounceOutRight
+* bounceOutUp
+* fadeIn
+* fadeInDown
+* fadeInDownBig
+* fadeInLeft
+* fadeInLeftBig
+* fadeInRight
+* fadeInRightBig
+* fadeInUp
+* fadeInUpBig
+* fadeOut
+* fadeOutDown
+* fadeOutDownBig
+* fadeOutLeft
+* fadeOutLeftBig
+* fadeOutRight
+* fadeOutRightBig
+* fadeOutUp
+* fadeOutUpBig
+* flipInX
+* flipInY
+* flipOutX
+* flipOutY
+* lightSpeedIn
+* lightSpeedOut
+* rotateIn
+* rotateInDownLeft
+* rotateInDownRight
+* rotateInUpLeft
+* rotateInUpRight
+* rotateOut
+* rotateOutDownLeft
+* rotateOutDownRight
+* rotateOutUpLeft
+* rotateOutUpRight
+* hinge
+* rollIn
+* rollOut
+* zoomIn
+* zoomInDown
+* zoomInLeft
+* zoomInRight
+* zoomInUp
+* zoomOut
+* zoomOutDown
+* zoomOutLeft
+* zoomOutRight
+* zoomOutUp
+* slideInDown
+* slideInLeft
+* slideInRight
+* slideInUp
+* slideOutDown
+* slideOutLeft
+* slideOutRight
+* slideOutUp
