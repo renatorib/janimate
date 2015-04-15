@@ -154,9 +154,9 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://cd
 
 ## Mentions
 
-[jQueryRain](http://www.jqueryrain.com/2015/02/janimate-makes-animate-css-rocks-jquery/)
-[jQueryPlugins](http://jquery-plugins.net/janimate-plugin-to-use-animate-css-with-jquery)
-[jQueryScripts](http://www.jqueryscript.net/animation/jQuery-Plugin-To-Animate-DOM-Elements-using-Animate-css-janimate.html)
-[Softpedia](http://webscripts.softpedia.com/script/Multimedia/3D-Graphics/jAnimate-84701.html)
-[OSChina](http://www.oschina.net/p/janimate)
-[bl6.jp](http://bl6.jp/web/javascript/jquery-janimate/)
+* [jQueryRain](http://www.jqueryrain.com/2015/02/janimate-makes-animate-css-rocks-jquery/)
+* [jQueryPlugins](http://jquery-plugins.net/janimate-plugin-to-use-animate-css-with-jquery)
+* [jQueryScripts](http://www.jqueryscript.net/animation/jQuery-Plugin-To-Animate-DOM-Elements-using-Animate-css-janimate.html)
+* [Softpedia](http://webscripts.softpedia.com/script/Multimedia/3D-Graphics/jAnimate-84701.html)
+* [OSChina](http://www.oschina.net/p/janimate)
+* [bl6.jp](http://bl6.jp/web/javascript/jquery-janimate/)
