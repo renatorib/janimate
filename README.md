@@ -160,3 +160,7 @@ You can use janimate with `bower`, `npm` or [download by rawgit file](https://cd
 * [Softpedia](http://webscripts.softpedia.com/script/Multimedia/3D-Graphics/jAnimate-84701.html)
 * [OSChina](http://www.oschina.net/p/janimate)
 * [bl6.jp](http://bl6.jp/web/javascript/jquery-janimate/)
+* [CodeGeekz](http://codegeekz.com/new-jquery-plugins-for-may-2015/)
+* [jQueryEngine](http://www.jqueryengine.com/janimate-makes-your-animate-css-rocks-with-jquery-7.html)
+* [Code PixelBell](http://code.pixelbell.com/janimate-plugin-to-help-you-use-animate-css-with-jquery/)
+* [jQueryPluginPlus](http://jquerypluginplus.com/janimate-makes-animate-css-rocks-jquery/)
