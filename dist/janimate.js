@@ -1,4 +1,22 @@
-(function($) {
+/*!
+ * jAnimate v0.1.4
+ * https://github.com/renatorib/janimate
+ *
+ * Copyright (c) 2014-2015 Renato Ribeiro
+ * Released under the MIT license
+ *
+ * Date: 2015-07-02T11:13:05.617Z
+ */
+
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
+})(function ($) {
 
   var __ = {
     class: "animated ",
@@ -6,12 +24,17 @@
     animationend: "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend"
   };
 
-  function jSequence(el, effects, callback){
-    this.effects = effects;
-    this.el = el;
-    this.indx = 0;
-    this.callback = callback;
+  function jSequence(options){
     var self = this;
+    this.opt = $.extend({}, {
+      el: false,
+      effects: false,
+      callback: false
+    }, options);
+    this.effects = this.opt.effects;
+    this.el = this.opt.el;
+    this.indx = 0;
+    this.callback = this.opt.callback;
     this.next = function(){
       $(this.el).jAnimateOnce(this.effects[this.indx], function(){
         self.indx++;
@@ -27,44 +50,46 @@
   }
 
   function jAnimate(options){
-    var defaults = {once: false, el: false, effect: false, callback: false};
-    var opt = $.extend({}, defaults, options);
-    var older = $(opt.el).attr('data-janimate');
-    var newer = __.class + opt.effect;
-    var once = opt.once;
-    $(opt.el).removeClass(older).removeAttr(__.data);
-    opt.el.offsetWidth = opt.el.offsetWidth; //the magic
-    $(opt.el).addClass(newer).attr(__.data, newer);
-    $(opt.el).one(__.animationend, function(){
-        if(opt.once){
-          $(opt.el).removeClass(newer).removeAttr(__.data);
+    var self = this;
+    this.opt = $.extend({}, {
+      once: false,
+      el: false,
+      effect: false,
+      callback: false
+    }, options);
+    this.older = $(this.opt.el).attr('data-janimate');
+    this.newer = __.class + this.opt.effect;
+    this.once = this.opt.once;
+    $(this.opt.el).removeClass(this.older).removeAttr(__.data);
+    this.opt.el.offsetWidth = this.opt.el.offsetWidth;
+    $(this.opt.el).addClass(this.newer).attr(__.data, this.newer);
+    $(this.opt.el).one(__.animationend, function(){
+        if(self.opt.once){
+          $(self.opt.el).removeClass(self.newer).removeAttr(__.data);
         }
-        if(typeof opt.callback != "undefined" && $.isFunction(opt.callback)){
-          opt.callback(this, opt.effect);
+        if(typeof self.opt.callback != "undefined" && $.isFunction(self.opt.callback)){
+          self.opt.callback(self, self.opt.effect);
         }
     });
   }
 
   $.fn.jAnimate = function(effect, callback) {
     return this.each(function() {
-      jAnimate({el: this, effect: effect, callback: callback});
+      new jAnimate({el: this, effect: effect, callback: callback});
     });
   }
 
   $.fn.jAnimateOnce = function(effect, callback) {
     return this.each(function() {
-      jAnimate({el: this, effect: effect, callback: callback, once: true});
+      new jAnimate({el: this, effect: effect, callback: callback, once: true});
     });
   }
 
   $.fn.jAnimateSequence = function(effects, callback) {
     return this.each(function() {
-      if($.isArray(effects)){
-        new jSequence(this, effects, callback).next();
-      } else {
-        return false;
-      }
+      if(!$.isArray(effects)) return false;
+      new jSequence({el: this, effects: effects, callback: callback}).next();
     });
   }
 
-})(jQuery);
+});

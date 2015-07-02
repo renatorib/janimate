@@ -1,6 +1,6 @@
 {
   "name": "janimate",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Plugin to help you use Animate.css with jQuery.",
   "main": "Gruntfile.js",
   "scripts": {
@@ -17,6 +17,12 @@
   },
   "homepage": "https://renatorib.github.io/janimate",
   "devDependencies": {
-    "grunt-release": "^0.12.0"
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-release": "^0.12.0",
+    "grunt-replace": "^0.9.2"
   }
 }

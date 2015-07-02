@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>jAnimate Test</title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/master/animate.css">
+</head>
+<body>
+
+  <h1 class="normal">jAnimate</h1>
+  <h1 class="once">jAnimateOnce</h1>
+  <h1 class="sequence">jAnimateSequence</h1>
+  <button class="effect" data-effect="fadeOut" data-janimate>jAnimate: fadeOut</button>
+  <button class="effect" data-effect="fadeOut" data-janimateonce>jAnimateOnce: fadeOut</button>
+  <button class="effect" data-effect="swing shake swing" data-janimatesequence>jAnimateSequence: swing shake swing</button>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="../dist/janimate.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("[data-janimate]").click(function(){
+          $('h1.normal')
+            .jAnimate($(this).data('effect'), function(self, effect){
+              alert(effect + ' done');
+            });
+        });
+
+        $("[data-janimateonce]").click(function(){
+          $('h1.once')
+            .jAnimateOnce($(this).data('effect'), function(self, effect){
+              alert(effect + ' done');
+            });
+        });
+
+        $("[data-janimatesequence]").click(function(){
+          $('h1.sequence')
+            .jAnimateSequence($(this).data('effect').split(' '), function(self, effects){
+              alert(effects.join(', ') + ' done');
+            });
+        });
+
+      });
+  </script>
+
+</body>
