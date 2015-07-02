@@ -1,12 +1,12 @@
 module.exports = function(grunt) {
 
   var filesConcat = [
-    'src/js/start.js',
-    'src/js/helpers.js',
-    'src/js/jSequence.js',
-    'src/js/jAnimate.js',
-    'src/js/extend.js',
-    'src/js/end.js'
+    'src/js/factory.js',
+    'src/js/lib/helpers.js',
+    'src/js/lib/jSequence.js',
+    'src/js/lib/jAnimate.js',
+    'src/js/lib/extend.js',
+    'src/js/lib/end.js'
   ];
 
   grunt.initConfig({
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
         dest: 'dist'
       }
     }
-    
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
