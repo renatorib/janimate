@@ -80,7 +80,8 @@ module.exports = function(grunt) {
         src: ['dist/*.js', 'dist/*.css'],
         dest: 'dist'
       }
-    },
+    }
+    
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
