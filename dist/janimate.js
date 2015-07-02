@@ -1,11 +1,11 @@
 /*!
- * jAnimate v0.1.4
+ * jAnimate v0.2.0
  * https://github.com/renatorib/janimate
  *
  * Copyright (c) 2014-2015 Renato Ribeiro
  * Released under the MIT license
  *
- * Date: 2015-07-02T11:13:05.617Z
+ * Date: 2015-07-02T11:43:03.268Z
  */
 
 (function (factory) {
