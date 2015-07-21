@@ -1,4 +1,4 @@
-jAnimate
+jAnimate [![Code Climate](https://codeclimate.com/repos/55adb22f6956804c4a011378/badges/51993737498d8947052f/gpa.svg)](https://codeclimate.com/repos/55adb22f6956804c4a011378/feed)
 ========
 Plugin to help you use [Animate.css](http://daneden.github.io/animate.css/) with jQuery.  
 
